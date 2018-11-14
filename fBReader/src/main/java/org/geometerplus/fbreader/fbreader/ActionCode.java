@@ -51,6 +51,7 @@ public interface ActionCode {
 	String VOLUME_KEY_SCROLL_FORWARD = "volumeKeyScrollForward";
 	String VOLUME_KEY_SCROLL_BACK = "volumeKeyScrollBackward";
 	String SHOW_MENU = "menu";
+	String SHOW_TRANSLATE = "translate";
 	String SHOW_NAVIGATION = "navigate";
 
 	String GO_BACK = "goBack";

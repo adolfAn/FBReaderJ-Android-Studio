@@ -61,6 +61,7 @@ abstract public class ZLView implements ZLViewEnums {
 	public abstract void onFingerPress(int x, int y);
 	public abstract void onFingerRelease(int x, int y);
 	public abstract void onFingerMove(int x, int y);
+	public abstract void onFingerUp(int x, int y);
 	public abstract boolean onFingerLongPress(int x, int y);
 	public abstract void onFingerReleaseAfterLongPress(int x, int y);
 	public abstract void onFingerMoveAfterLongPress(int x, int y);

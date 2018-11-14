@@ -19,14 +19,15 @@
 
 package org.geometerplus.zlibrary.ui.android.view.animation;
 
-import java.util.LinkedList;
-import java.util.List;
-
-import android.graphics.*;
-import android.util.FloatMath;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Paint;
 
 import org.geometerplus.zlibrary.core.library.ZLibrary;
 import org.geometerplus.zlibrary.core.view.ZLViewEnums;
+
+import java.util.LinkedList;
+import java.util.List;
 
 public abstract class AnimationProvider {
 	public static enum Mode {
@@ -145,7 +146,7 @@ public abstract class AnimationProvider {
 				final DrawInfo info1 = myDrawInfos.get(i);
 				final float dX = info0.X - info1.X;
 				final float dY = info0.Y - info1.Y;
-				velocity += FloatMath.sqrt(dX * dX + dY * dY) / Math.max(1, info1.Start - info0.Start);
+				velocity += Math.sqrt(dX * dX + dY * dY) / Math.max(1, info1.Start - info0.Start);
 			}
 			velocity /= myDrawInfos.size() - 1;
 			velocity *= duration;

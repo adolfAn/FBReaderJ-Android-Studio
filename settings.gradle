@@ -1,4 +1,4 @@
-include ':ambilWarna'
+include ':ambilWarna', ':translate_bd'
 include ':superToasts'
 include ':code'
 include ':library'

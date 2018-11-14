@@ -21,19 +21,24 @@ package org.geometerplus.android.fbreader.image;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.*;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Rect;
 import android.os.Bundle;
-import android.util.FloatMath;
-import android.view.*;
-
-import org.geometerplus.zlibrary.core.image.*;
-import org.geometerplus.zlibrary.core.util.ZLColor;
-
-import org.geometerplus.zlibrary.ui.android.library.ZLAndroidLibrary;
-import org.geometerplus.zlibrary.ui.android.image.ZLAndroidImageData;
-import org.geometerplus.zlibrary.ui.android.util.ZLAndroidColorUtil;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 
 import org.geometerplus.android.util.OrientationUtil;
+import org.geometerplus.zlibrary.core.image.ZLFileImage;
+import org.geometerplus.zlibrary.core.image.ZLImageData;
+import org.geometerplus.zlibrary.core.image.ZLImageManager;
+import org.geometerplus.zlibrary.core.util.ZLColor;
+import org.geometerplus.zlibrary.ui.android.image.ZLAndroidImageData;
+import org.geometerplus.zlibrary.ui.android.library.ZLAndroidLibrary;
+import org.geometerplus.zlibrary.ui.android.util.ZLAndroidColorUtil;
 
 public class ImageViewActivity extends Activity {
 	public static final String URL_KEY = "fbreader.imageview.url";
@@ -258,7 +263,7 @@ public class ImageViewActivity extends Activity {
 						myStartPinchDistance2 = distance2;
 						myStartZoomFactor = myZoomFactor;
 					} else {
-						myZoomFactor = myStartZoomFactor * FloatMath.sqrt(distance2 / myStartPinchDistance2);
+						myZoomFactor = (float) (myStartZoomFactor * Math.sqrt(distance2 / myStartPinchDistance2));
 						postInvalidate();
 					}
 				}

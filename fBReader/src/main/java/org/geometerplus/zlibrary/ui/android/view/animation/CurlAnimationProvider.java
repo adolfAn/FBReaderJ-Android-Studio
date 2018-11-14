@@ -19,12 +19,13 @@
 
 package org.geometerplus.zlibrary.ui.android.view.animation;
 
-import android.graphics.*;
-import android.util.FloatMath;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Path;
 
 import org.geometerplus.zlibrary.core.util.BitmapUtil;
 import org.geometerplus.zlibrary.core.view.ZLViewEnums;
-
 import org.geometerplus.zlibrary.ui.android.util.ZLAndroidColorUtil;
 import org.geometerplus.zlibrary.ui.android.view.ViewUtil;
 
@@ -122,7 +123,7 @@ public final class CurlAnimationProvider extends AnimationProvider {
 		{
 			float d1 = x - x1;
 			float d2 = y - cornerY;
-			sX = FloatMath.sqrt(d1 * d1 + d2 * d2) / 2;
+			sX = (float) (Math.sqrt(d1 * d1 + d2 * d2) / 2);
 			if (cornerX == 0) {
 				sX = -sX;
 			}
@@ -130,7 +131,7 @@ public final class CurlAnimationProvider extends AnimationProvider {
 		{
 			float d1 = x - cornerX;
 			float d2 = y - y1;
-			sY = FloatMath.sqrt(d1 * d1 + d2 * d2) / 2;
+			sY = (float) (Math.sqrt(d1 * d1 + d2 * d2) / 2);
 			if (cornerY == 0) {
 				sY = -sY;
 			}
